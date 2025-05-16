@@ -8,6 +8,7 @@ const Experience = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
+  // Training and education data
   const training = [
     {
       title: 'COPA (Computer Operator and Programming Assistant)',
@@ -35,6 +36,7 @@ const Experience = () => {
     },
   ];
 
+  // Work experience data
   const experiences = [
     {
       title: 'Software Developer',
@@ -89,6 +91,7 @@ const Experience = () => {
           <Grid container spacing={{ xs: 2, sm: 4 }}>
             {training.map((item, index) => (
               <Grid item xs={12} key={index}>
+                {/* Animation for each training card */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -104,6 +107,7 @@ const Experience = () => {
                       borderColor: 'primary.main',
                     }}
                   >
+                    {/* Training Title */}
                     <Typography 
                       variant={isMobile ? "h6" : "h5"} 
                       component="h3" 
@@ -113,6 +117,7 @@ const Experience = () => {
                     >
                       {item.title}
                     </Typography>
+                    {/* Institution Name */}
                     <Typography 
                       variant="h6" 
                       color="text.secondary" 
@@ -121,6 +126,7 @@ const Experience = () => {
                     >
                       {item.institution}
                     </Typography>
+                    {/* Duration */}
                     <Typography 
                       variant="subtitle1" 
                       color="text.secondary" 
@@ -129,6 +135,7 @@ const Experience = () => {
                     >
                       Duration: {item.period}
                     </Typography>
+                    {/* Description List */}
                     <Box component="ul" sx={{ pl: 2, mb: 2 }}>
                       {item.description.map((desc, i) => (
                         <Typography 
@@ -141,6 +148,7 @@ const Experience = () => {
                         </Typography>
                       ))}
                     </Box>
+                    {/* Skills Chips */}
                     <Box sx={{ 
                       display: 'flex', 
                       flexWrap: 'wrap', 
@@ -191,6 +199,7 @@ const Experience = () => {
             <Grid container spacing={{ xs: 2, sm: 4 }}>
               {experiences.map((exp, index) => (
                 <Grid item xs={12} key={index}>
+                  {/* Animation for each work experience card */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -206,6 +215,7 @@ const Experience = () => {
                         borderColor: 'secondary.main',
                       }}
                     >
+                      {/* Job Title */}
                       <Typography 
                         variant={isMobile ? "h6" : "h5"} 
                         component="h3" 
@@ -215,6 +225,7 @@ const Experience = () => {
                       >
                         {exp.title}
                       </Typography>
+                      {/* Company Name */}
                       <Typography 
                         variant="h6" 
                         color="text.secondary" 
@@ -223,6 +234,7 @@ const Experience = () => {
                       >
                         {exp.company}
                       </Typography>
+                      {/* Period */}
                       <Typography 
                         variant="subtitle1" 
                         color="text.secondary" 
@@ -231,6 +243,7 @@ const Experience = () => {
                       >
                         {exp.period}
                       </Typography>
+                      {/* Description List */}
                       <Box component="ul" sx={{ pl: 2 }}>
                         {exp.description.map((item, i) => (
                           <Typography 

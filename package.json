@@ -7,11 +7,12 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.0",
+    "framer-motion": "^11.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
-    "framer-motion": "^11.0.0",
     "react-type-animation": "^3.2.0"
   },
   "scripts": {
@@ -38,4 +39,4 @@
       "last 1 safari version"
     ]
   }
-} 
+}

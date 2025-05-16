@@ -9,6 +9,8 @@ import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 const theme = createTheme({
   palette: {
@@ -31,6 +33,15 @@ const theme = createTheme({
       fontWeight: 600,
     },
   },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          scrollBehavior: 'smooth',
+        },
+      },
+    },
+  },
 });
 
 function App() {
@@ -39,7 +50,7 @@ function App() {
       <CssBaseline />
       <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Header />
-        <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+        <Container maxWidth="lg" sx={{ mt: 4, mb: 4, flex: 1 }}>
           <Hero />
           <About />
           <Experience />
@@ -47,6 +58,8 @@ function App() {
           <Projects />
           <Contact />
         </Container>
+        <Footer />
+        <ScrollToTop />
       </Box>
     </ThemeProvider>
   );

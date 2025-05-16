@@ -9,9 +9,9 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 // Instagram gradient styled button
 const InstagramIconButton = styled(IconButton)({
-  background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
+  background: 'linear-gradient(45deg, #f09433 0%,rgb(219, 34, 151) 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
   '&:hover': {
-    background: 'linear-gradient(45deg, #bc1888 0%, #cc2366 25%, #dc2743 50%, #e6683c 75%, #f09433 100%)',
+    background: 'linear-gradient(45deg,rgb(221, 59, 132) 0%, #cc2366 25%, #dc2743 50%, #e6683c 75%, #f09433 100%)',
   },
   '& .MuiSvgIcon-root': {
     color: 'white',
@@ -22,6 +22,7 @@ const Contact = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
+  // Main contact information
   const contactInfo = {
     email: 'ranveersinhrajput18@gmail.com',
     phone: '7990246400',
@@ -31,6 +32,7 @@ const Contact = () => {
     whatsapp: '7990246400',
   };
 
+  // WhatsApp direct message link
   const whatsappLink = `https://wa.me/91${contactInfo.whatsapp}?text=hey`;
 
   return (
@@ -54,6 +56,7 @@ const Contact = () => {
         }}
       >
         <Grid container spacing={{ xs: 2, sm: 4 }} justifyContent="center">
+          {/* Email and Phone Section */}
           <Grid item xs={12} sm={6}>
             <Box sx={{ 
               display: 'flex', 
@@ -66,6 +69,7 @@ const Contact = () => {
                 wordBreak: 'break-word'
               }}>
                 <EmailIcon sx={{ mr: 2, color: '#EA4335' }} />
+                {/* Email Link */}
                 <Link 
                   href={`mailto:${contactInfo.email}`} 
                   color="inherit" 
@@ -83,6 +87,7 @@ const Contact = () => {
                 alignItems: 'center'
               }}>
                 <PhoneIcon sx={{ mr: 2, color: '#34A853' }} />
+                {/* Phone Link */}
                 <Link 
                   href={`tel:${contactInfo.phone}`} 
                   color="inherit" 
@@ -94,6 +99,7 @@ const Contact = () => {
               </Box>
             </Box>
           </Grid>
+          {/* Social Media Section */}
           <Grid item xs={12} sm={6}>
             <Box sx={{ 
               display: 'flex', 
@@ -101,6 +107,7 @@ const Contact = () => {
               gap: { xs: 1, sm: 2 },
               mt: { xs: 2, sm: 0 }
             }}>
+              {/* LinkedIn */}
               <IconButton
                 href={contactInfo.linkedin}
                 target="_blank"
@@ -115,6 +122,7 @@ const Contact = () => {
               >
                 <LinkedInIcon />
               </IconButton>
+              {/* GitHub */}
               <IconButton
                 href={contactInfo.github}
                 target="_blank"
@@ -129,6 +137,7 @@ const Contact = () => {
               >
                 <GitHubIcon />
               </IconButton>
+              {/* Instagram */}
               <InstagramIconButton
                 href={contactInfo.instagram}
                 target="_blank"
@@ -138,6 +147,7 @@ const Contact = () => {
               >
                 <InstagramIcon />
               </InstagramIconButton>
+              {/* WhatsApp direct chat */}
               <IconButton
                 href={whatsappLink}
                 target="_blank"
@@ -155,6 +165,7 @@ const Contact = () => {
             </Box>
           </Grid>
         </Grid>
+        {/* Closing message */}
         <Typography 
           variant="body1" 
           align="center" 

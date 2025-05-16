@@ -9,6 +9,7 @@ const Hero = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
+    // Main container for the hero section
     <Box
       sx={{
         minHeight: { xs: 'calc(100vh - 56px)', sm: '80vh' },
@@ -26,6 +27,7 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
+        {/* Profile Avatar */}
         <Avatar
           alt="Ranveersinh Rajput"
           src="/Ranveersinh.png"
@@ -37,6 +39,7 @@ const Hero = () => {
             boxShadow: 3,
           }}
         />
+        {/* Main Heading */}
         <Typography 
           variant={isMobile ? "h3" : "h2"} 
           component="h1" 
@@ -48,6 +51,7 @@ const Hero = () => {
         >
           Hi, I'm Ranveersinh Rajput
         </Typography>
+        {/* Typing Animation for Roles */}
         <Typography 
           variant={isMobile ? "h5" : "h4"} 
           color="text.secondary" 
@@ -68,6 +72,7 @@ const Hero = () => {
             repeat={Infinity}
           />
         </Typography>
+        {/* Short Description */}
         <Typography 
           variant="body1" 
           color="text.secondary" 
@@ -83,6 +88,7 @@ const Hero = () => {
           I'm passionate about creating efficient, scalable, and user-friendly solutions.
           With expertise in modern web technologies, I strive to build applications that make a difference.
         </Typography>
+        {/* Button to scroll to Contact section */}
         <motion.div whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }}>
           <Button
             component={ScrollLink}
