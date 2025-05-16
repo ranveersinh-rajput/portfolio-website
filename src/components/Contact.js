@@ -6,6 +6,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import { SiX } from 'react-icons/si';
 
 // Instagram gradient styled button
 const InstagramIconButton = styled(IconButton)({
@@ -30,6 +31,7 @@ const Contact = () => {
     github: 'https://github.com/ranveersinh-rajput',
     instagram: 'https://instagram.com/ranveersinh_48',
     whatsapp: '7990246400',
+    x: 'https://x.com/yourusername',
   };
 
   // WhatsApp direct message link
@@ -136,6 +138,22 @@ const Contact = () => {
                 size={isMobile ? "medium" : "large"}
               >
                 <GitHubIcon />
+              </IconButton>
+              {/* X (Twitter) */}
+              <IconButton
+                href={contactInfo.x}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  bgcolor: '#000',
+                  '&:hover': { bgcolor: '#222' },
+                  padding: { xs: '8px', sm: '12px' },
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+                size={isMobile ? "medium" : "large"}
+              >
+                <SiX size={24} style={{ color: '#fff' }} />
               </IconButton>
               {/* Instagram */}
               <InstagramIconButton

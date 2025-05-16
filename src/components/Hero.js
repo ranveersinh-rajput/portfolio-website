@@ -3,6 +3,7 @@ import { Box, Typography, Button, Avatar, useTheme, useMediaQuery } from '@mui/m
 import ScrollLink from './ScrollLink';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
+import ProfileFlipCard from './ProfileFlipCard';
 
 const Hero = () => {
   const theme = useTheme();
@@ -28,17 +29,13 @@ const Hero = () => {
         transition={{ duration: 1 }}
       >
         {/* Profile Avatar */}
-        <Avatar
-          alt="Ranveersinh Rajput"
-          src="/Ranveersinh.png"
-          sx={{
-            width: { xs: 120, sm: 140 },
-            height: { xs: 120, sm: 140 },
-            mb: 3,
-            mx: 'auto',
-            boxShadow: 3,
-          }}
-        />
+        <Box sx={{ mb: 3 }}>
+          <ProfileFlipCard
+            frontImage="/Ranveersinh.png"
+            backImage="/Ranveersinh-back.png" // Replace with your back image path
+            size={isMobile ? 120 : 140}
+          />
+        </Box>
         {/* Main Heading */}
         <Typography 
           variant={isMobile ? "h3" : "h2"} 
@@ -89,21 +86,19 @@ const Hero = () => {
           With expertise in modern web technologies, I strive to build applications that make a difference.
         </Typography>
         {/* Button to scroll to Contact section */}
-        <motion.div whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }}>
-          <Button
-            component={ScrollLink}
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            variant="contained"
-            size={isMobile ? "medium" : "large"}
-            sx={{ mt: 2 }}
-          >
-            Get in Touch
-          </Button>
-        </motion.div>
+        <Button
+          component={ScrollLink}
+          to="contact"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          variant="contained"
+          size={isMobile ? "medium" : "large"}
+          sx={{ mt: 2, fontWeight: 'bold', fontSize: isMobile ? '1rem' : '1.1rem' }}
+        >
+          Get in Touch
+        </Button>
       </motion.div>
     </Box>
   );
