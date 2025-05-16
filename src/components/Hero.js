@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Button, Avatar, useTheme, useMediaQuery } from '@mui/material';
 import ScrollLink from './ScrollLink';
 import { motion } from 'framer-motion';
-import Typed from 'react-typed';
+import { TypeAnimation } from 'react-type-animation';
 
 const Hero = () => {
   const theme = useTheme();
@@ -54,11 +54,18 @@ const Hero = () => {
           paragraph
           sx={{ mb: 2 }}
         >
-          <Typed
-            strings={['Software Developer', 'Problem Solver', 'Tech Enthusiast']}
-            typeSpeed={60}
-            backSpeed={40}
-            loop
+          <TypeAnimation
+            sequence={[
+              'Software Developer',
+              1000,
+              'Problem Solver',
+              1000,
+              'Tech Enthusiast',
+              1000,
+            ]}
+            wrapper="span"
+            speed={50}
+            repeat={Infinity}
           />
         </Typography>
         <Typography 
